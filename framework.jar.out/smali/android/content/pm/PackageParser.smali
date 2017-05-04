@@ -5841,7 +5841,6 @@
     .local v17, "outerDepth":I
     :cond_20
     :goto_7
-    :goto_flyme_0
     invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v23
@@ -5851,7 +5850,7 @@
 
     move/from16 v0, v23
 
-    if-eq v0, v2, :cond_2f
+    if-eq v0, v2, :cond_30
 
     .line 3413
     const/4 v2, 0x3
@@ -5867,7 +5866,7 @@
 
     move/from16 v0, v17
 
-    if-le v2, v0, :cond_2f
+    if-le v2, v0, :cond_30
 
     .line 3415
     :cond_21
@@ -6229,7 +6228,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_2e
 
     .line 3467
     iget-object v6, v14, Landroid/content/pm/PackageParser$Activity;->metaData:Landroid/os/Bundle;
@@ -6250,17 +6249,18 @@
 
     iput-object v2, v14, Landroid/content/pm/PackageParser$Activity;->metaData:Landroid/os/Bundle;
 
-    if-nez v2, :cond_flyme_0
+    if-nez v2, :cond_2d
 
     const/4 v2, 0x0
 
     return-object v2
 
-    :cond_flyme_0
+    :cond_2d
     invoke-static {v14}, Landroid/content/pm/PackageParser$FlymeInjector;->parseAccessMetaFromResource(Landroid/content/pm/PackageParser$Activity;)V
 
-    goto/16 :goto_flyme_0
-    :cond_2d
+    goto/16 :goto_7
+
+    :cond_2e
     const-string v2, "PackageParser"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -6293,17 +6293,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3474
-    if-eqz p7, :cond_2e
+    if-eqz p7, :cond_2f
 
-    .line 3475
-    const-string/jumbo v2, "PackageParser"
+    const-string v2, "PackageParser"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Unknown element under <receiver>: "
+    const-string v4, "Unknown element under <receiver>: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6359,21 +6357,19 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3483
     :goto_a
     invoke-static/range {p3 .. p3}, Lcom/android/internal/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
 
     goto/16 :goto_7
 
-    .line 3479
-    :cond_2e
-    const-string/jumbo v2, "PackageParser"
+    :cond_2f
+    const-string v2, "PackageParser"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Unknown element under <activity>: "
+    const-string v4, "Unknown element under <activity>: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6431,11 +6427,9 @@
 
     goto :goto_a
 
-    .line 3496
-    :cond_2f
-    if-nez v21, :cond_30
+    :cond_30
+    if-nez v21, :cond_31
 
-    .line 3497
     iget-object v3, v14, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iget-object v2, v14, Landroid/content/pm/PackageParser$Activity;->intents:Ljava/util/ArrayList;
@@ -6444,19 +6438,17 @@
 
     move-result v2
 
-    if-lez v2, :cond_31
+    if-lez v2, :cond_32
 
     const/4 v2, 0x1
 
     :goto_b
     iput-boolean v2, v3, Landroid/content/pm/ActivityInfo;->exported:Z
 
-    .line 3500
-    :cond_30
+    :cond_31
     return-object v14
 
-    .line 3497
-    :cond_31
+    :cond_32
     const/4 v2, 0x0
 
     goto :goto_b
@@ -22947,14 +22939,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_flyme_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_flyme_0
-
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -22970,7 +22961,7 @@
 
     .local v4, "i":I
     :goto_0
-    if-ge v4, v0, :cond_7
+    if-ge v4, v0, :cond_8
 
     .line 1314
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
@@ -22981,73 +22972,63 @@
     .local v1, "c":C
     const/16 v5, 0x61
 
-    if-lt v1, v5, :cond_2
+    if-lt v1, v5, :cond_3
 
     const/16 v5, 0x7a
 
-    if-gt v1, v5, :cond_2
+    if-gt v1, v5, :cond_3
 
-    .line 1316
-    :cond_0
+    :cond_1
     const/4 v2, 0x0
 
-    .line 1313
-    :cond_1
+    :cond_2
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 1315
-    :cond_2
-    const/16 v5, 0x41
-
-    if-lt v1, v5, :cond_3
-
-    const/16 v5, 0x5a
-
-    if-le v1, v5, :cond_0
-
-    .line 1319
     :cond_3
-    if-nez v2, :cond_5
-
-    .line 1320
-    const/16 v5, 0x30
+    const/16 v5, 0x41
 
     if-lt v1, v5, :cond_4
 
-    const/16 v5, 0x39
+    const/16 v5, 0x5a
 
     if-le v1, v5, :cond_1
 
     :cond_4
+    if-nez v2, :cond_6
+
+    const/16 v5, 0x30
+
+    if-lt v1, v5, :cond_5
+
+    const/16 v5, 0x39
+
+    if-le v1, v5, :cond_2
+
+    :cond_5
     const/16 v5, 0x5f
 
-    if-eq v1, v5, :cond_1
+    if-eq v1, v5, :cond_2
 
-    .line 1324
-    :cond_5
+    :cond_6
     const/16 v5, 0x2e
 
-    if-ne v1, v5, :cond_6
+    if-ne v1, v5, :cond_7
 
-    .line 1325
     const/4 v3, 0x1
 
-    .line 1326
     const/4 v2, 0x1
 
-    .line 1327
     goto :goto_1
 
-    .line 1329
-    :cond_6
+    :cond_7
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "bad character \'"
+    const-string v6, "bad character \'"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -23071,36 +23052,31 @@
 
     .line 1331
     .end local v1    # "c":C
-    :cond_7
-    if-eqz p2, :cond_8
+    :cond_8
+    if-eqz p2, :cond_9
 
     invoke-static {p0}, Landroid/os/FileUtils;->isValidExtFilename(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_a
 
-    .line 1334
-    :cond_8
-    if-nez v3, :cond_a
+    :cond_9
+    if-nez v3, :cond_b
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_b
 
-    .line 1335
-    const-string/jumbo v5, "must have at least one \'.\' separator"
+    const-string v5, "must have at least one \'.\' separator"
 
-    .line 1334
     :goto_2
     return-object v5
 
-    .line 1332
-    :cond_9
-    const-string/jumbo v5, "Invalid filename"
+    :cond_a
+    const-string v5, "Invalid filename"
 
     return-object v5
 
-    .line 1335
-    :cond_a
+    :cond_b
     const/4 v5, 0x0
 
     goto :goto_2

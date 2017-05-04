@@ -2085,14 +2085,6 @@
     .end annotation
 .end method
 
-.method public abstract showBootMessage(Ljava/lang/CharSequence;Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract showLockTaskEscapeMessage(Landroid/os/IBinder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
