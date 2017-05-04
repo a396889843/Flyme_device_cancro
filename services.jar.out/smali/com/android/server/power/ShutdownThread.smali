@@ -6,10 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/power/ShutdownThread$FlymeInjector;,
         Lcom/android/server/power/ShutdownThread$CloseDialogReceiver;,
         Lcom/android/server/power/ShutdownThread$1;
-        Lcom/android/server/power/ShutdownThread$FlymeInjector;,
-        Lcom/android/server/power/ShutdownThread$CloseDialogReceiver;
     }
 .end annotation
 

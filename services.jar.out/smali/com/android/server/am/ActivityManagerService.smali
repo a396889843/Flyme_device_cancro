@@ -7990,6 +7990,8 @@
     invoke-direct/range {v4 .. v13}, Lcom/android/server/am/ActivityManagerService;->forceStopPackageLocked(Ljava/lang/String;IZZZZZILjava/lang/String;)Z
 
     :cond_1a
+    :goto_flyme_0
+
     if-eqz v66, :cond_22
 
     const/4 v4, 0x1
@@ -100801,6 +100803,7 @@
     invoke-virtual {v3, v5}, Lcom/android/server/am/ActivityManagerService$MainHandler;->post(Ljava/lang/Runnable;)Z
 
     :cond_37
+    invoke-static/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->updateFlymeOomAdjLocked(Lcom/android/server/am/ActivityManagerService;)V
     return-void
 
     .restart local v4    # "app":Lcom/android/server/am/ProcessRecord;

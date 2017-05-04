@@ -22858,7 +22858,9 @@
 
     .line 4165
     :cond_2
-    invoke-direct {p0, p1, p2, p6}, Lcom/android/server/pm/Settings;->sendFlymePackageFirstLaunchBroadcast(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;I)V
+    move/from16 v0, p6
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/android/server/pm/Settings;->sendFlymePackageFirstLaunchBroadcast(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;I)V
     const/4 v1, 0x0
 
     move/from16 v0, p6
@@ -28184,6 +28186,7 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 3884
     iget-object v0, p0, Lcom/android/server/pm/Settings;->mPackages:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -28192,8 +28195,9 @@
 
     check-cast v7, Lcom/android/server/pm/PackageSetting;
 
+    .line 3886
     .local v7, "pkgSetting":Lcom/android/server/pm/PackageSetting;
-    const-string v1, "meizu.intent.action.PACKAGE_FIRST_LAUNCH"
+    const-string/jumbo v1, "meizu.intent.action.PACKAGE_FIRST_LAUNCH"
 
     iget-object v2, v7, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
 
@@ -28213,5 +28217,6 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/server/pm/PackageManagerService;->sendPackageBroadcast(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/IIntentReceiver;[I)V
 
+    .line 3883
     return-void
 .end method
