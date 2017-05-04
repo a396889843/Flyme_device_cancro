@@ -5351,10 +5351,6 @@
 
     :cond_18
     
-    invoke-static {p0, p1, v0}, Landroid/content/res/Configuration$FlymeInjector;->updateFrom(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
-
-    move-result v0
-    
     iget-object v3, p1, Landroid/content/res/Configuration;->themeConfig:Landroid/content/res/ThemeConfig;
 
     if-eqz v3, :cond_19
@@ -5375,6 +5371,11 @@
 
     :cond_19
     :goto_2
+    
+    invoke-static {p0, p1, v0}, Landroid/content/res/Configuration$FlymeInjector;->updateFrom(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
+
+    move-result v0
+    
     return v0
 
     .end local v1    # "deltaScreenLayoutDir":I
