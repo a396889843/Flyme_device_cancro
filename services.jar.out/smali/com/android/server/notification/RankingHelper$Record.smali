@@ -21,6 +21,10 @@
 # instance fields
 .field keyguard:I
 
+.field mFlymeHeadsUp:I
+
+.field mFlymeRemind:Z
+
 .field peekable:Z
 
 .field pkg:Ljava/lang/String;
