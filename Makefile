@@ -54,7 +54,7 @@ vendor_modify_images := boot
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyChain NfcNci PicoTts PrintSpooler Stk UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FMRadio FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell
+vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyChain NfcNci PicoTts PrintSpooler Stk UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FMRadio FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell CMSettingsProvider
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -138,8 +138,8 @@ vendor_modify_jars := framework qti-telephony-common services telephony-common w
 # The default value is Nexus-6P_Unofficial.
 # You should configure the property according to your device and your ID with replace the "Nexus-6P_Unofficial".
 override_property += \
-    ro.flyme.romer=Unofficial \
-    ro.product.model_romer=Nexus-6P_Unofficial
+    ro.flyme.romer=GuaiYiHu \
+    ro.product.model_romer=cancro_GuaiYiHu
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
