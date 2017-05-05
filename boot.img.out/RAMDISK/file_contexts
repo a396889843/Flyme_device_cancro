@@ -390,7 +390,6 @@
 /data/system/users/[0-9]+/lock_wallpaper		u:object_r:wallpaper_file:s0
 /data/system/users/[0-9]+/smart_wallpaper_target		u:object_r:wallpaper_file:s0
 
-
 ###################################
 # Dev block nodes
 #
