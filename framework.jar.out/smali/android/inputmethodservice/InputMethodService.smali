@@ -3366,8 +3366,6 @@
 
     :cond_flyme_0
 
-    invoke-direct {p0, v3}, Landroid/inputmethodservice/InputMethodService;->handleBack(Z)Z
-
     invoke-direct {p0, v5}, Landroid/inputmethodservice/InputMethodService;->handleBack(Z)Z
 
     move-result v1
